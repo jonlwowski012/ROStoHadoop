@@ -26,7 +26,7 @@ def imuCallback(data, args):
 	namespace = split_string[1]
 	
 
-	main = "data"
+	main = "/home/jonlwowski012/catkin_ws/src/ROStoHadoop/data"
 	main_exists = os.path.isdir(main)
 	if not main_exists:
 		os.makedirs(main)
@@ -56,7 +56,7 @@ def people_location_sub_all():
  
 
 if __name__ == '__main__':
-	rospy.init_node('people_location_combiner', anonymous=True)
+	rospy.init_node('keyword_to_csv', anonymous=True)
         people_location_sub_all()
         try:
 		while(1):

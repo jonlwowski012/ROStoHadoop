@@ -26,13 +26,13 @@ def imuCallback(data, args):
 	namespace = split_string[1]
 	
 
-	main = "data"
+	main = "/home/jonlwowski012/catkin_ws/src/ROStoHadoop/data"
 	main_exists = os.path.isdir(main)
 	if not main_exists:
 		os.makedirs(main)
 
 
-	topic_name_exists = os.path.isdir(topic_name)
+	topic_name_exists = os.path.isdir(main+'/'+topic_name)
 	if not topic_name_exists:
 		os.makedirs(main+'/'+topic_name)
 

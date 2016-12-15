@@ -20,6 +20,7 @@ if __name__ == '__main__':
 					if (os.path.getsize(root+"/"+file_) >= 64000):
 						target = open(root+"/"+file_, "r+")
 						print "Saving file to HDFS"
+						target.close()
 						subprocess.call(["hadoop", "fs", "-copyFromLocal", "imu_data.csv", "hdfs:///mikey/imu/imu_data"+str(num)])
 						num+=1
 						print "Deleting File"
